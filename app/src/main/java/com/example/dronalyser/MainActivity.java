@@ -37,13 +37,9 @@ public class MainActivity extends AppCompatActivity {
         TextView live_eng = (TextView)findViewById(R.id.live_eng);
         TextView live_hin = (TextView)findViewById(R.id.live_hin);
         Button drone_button_eng = (Button) findViewById(R.id.drone_button_eng);
-        Button drone_button_hin = (Button)findViewById(R.id.drone_button_hin);
         Button live_button_eng = (Button) findViewById(R.id.live_button_eng);
-        Button live_button_hin = (Button)findViewById(R.id.live_button_hin);
         Button signing_in = (Button) findViewById(R.id.signing_in);
-        Button signing_in_hin = (Button)findViewById(R.id.signing_in_hindi);
         Switch translate = (Switch) findViewById(R.id.Translate);
-        Switch translate_hin = (Switch) findViewById(R.id.Translate_Hin);
 
 
         //Toggling the Englist to Hindi witch and vice versa
