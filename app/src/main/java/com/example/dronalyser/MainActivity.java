@@ -17,7 +17,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    public int toggleHin=0;
+    public static int toggleHin=0;
+    public static int engOrHin;
     public String macid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,9 +78,10 @@ public class MainActivity extends AppCompatActivity {
     public void buttonSign(View view){
         //Fetch MAC Address of the device to sign in
         macid= getMac();
-        Toast.makeText(getBaseContext(),
-            macid,
-            Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getBaseContext(),
+//            macid,
+//            Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(getApplicationContext(), signn_in.class));
         //Firebase connectivity to retrieve storage data
     }
 
@@ -89,6 +91,11 @@ public class MainActivity extends AppCompatActivity {
         //Show the map and ask to plot the area
         startActivity(new Intent(getApplicationContext(), call_drone.class));
     }
+
+//    public String passMac(){
+//        macid= getMac();
+//        return macid;
+//    }
 
     public String getMac() {
         try {
@@ -118,5 +125,9 @@ public class MainActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
         }
         return "";
+    }
+    public static int engOrHin(){
+        engOrHin=toggleHin;
+        return engOrHin;
     }
 }

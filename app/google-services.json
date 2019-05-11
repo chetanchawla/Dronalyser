@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "674202057251",
+    "firebase_url": "https://dronalyser.firebaseio.com",
+    "project_id": "dronalyser",
+    "storage_bucket": "dronalyser.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:674202057251:android:77750c1bb131ee36",
+        "android_client_info": {
+          "package_name": "com.example.dronalyser"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "674202057251-1ddnvgtp84l6lk7fe9hehp4qpc2k2ojj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dronalyser",
+            "certificate_hash": "1f9f0b2c922eb8a335d7b4953939ce86164c7aad"
+          }
+        },
+        {
+          "client_id": "674202057251-k8fngu5u7c2hfhhkb0ujhm8cfcarso2n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJ5lfsAc6BpPfrw58PRkyQVEUXY_S_BTY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "674202057251-k8fngu5u7c2hfhhkb0ujhm8cfcarso2n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
