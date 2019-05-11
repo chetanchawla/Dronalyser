@@ -2,6 +2,7 @@ package com.example.dronalyser;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
@@ -35,17 +36,21 @@ import java.io.IOException;
 import java.net.NetworkInterface;
 import java.util.Collections;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class signn_in extends Activity{
     public StorageReference mStorage;
     public String macAddr;
+    public String nameMacAddr;
     public  int engorhin;
+    public int zoom=0;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_in_layout);
         macAddr = getMac();
+        nameMacAddr = macAddr.replaceAll(Pattern.quote(":"), "_");
         Toast.makeText(getBaseContext(),
                 "Signed In",
                 Toast.LENGTH_SHORT).show();
@@ -53,10 +58,10 @@ public class signn_in extends Activity{
         Button clickhere=(Button)findViewById(R.id.button);
         engorhin=MainActivity.engOrHin();
         if(engorhin%2==0){
-            textVieww.setText("Welcome User "+ macAddr);
+            textVieww.setText("Welcome User "+ nameMacAddr);
         }
         else{
-            textVieww.setText("स्वागत है "+ macAddr);
+            textVieww.setText("स्वागत है "+ nameMacAddr);
             clickhere.setText("रिपोर्ट देखें");
         }
 
@@ -72,15 +77,23 @@ public class signn_in extends Activity{
         // ImageView in your Activity
         final ImageView reportImage = findViewById(R.id.reportImage);
         final ImageView droneImage = findViewById(R.id.droneImage);
-
-        storageReference.child("image.png").getBytes(Long.MAX_VALUE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
+        final Button buttonn=findViewById(R.id.button);
+        final TextView textVieww=findViewById(R.id.textView);
+        final Button button2 = findViewById(R.id.button2);
+        storageReference.child(nameMacAddr + ".png").getBytes(Long.MAX_VALUE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
             @Override
             public void onSuccess(byte[] bytes) {
                 // Use the bytes to display the image
                 Toast.makeText(getBaseContext(),
-                    "Downloaded pic",
+                    "Downloaded report",
                     Toast.LENGTH_SHORT).show();
                 droneImage.setVisibility(View.INVISIBLE);
+                buttonn.setVisibility(View.INVISIBLE);
+                textVieww.setVisibility(View.INVISIBLE);
+                if(engorhin%2==1){
+                    button2.setText("ज़ूम इन");
+                }
+                button2.setVisibility(View.VISIBLE);
                 bmptoimg.setImageViewWithByteArray(reportImage,bytes);
             }
         }).addOnFailureListener(new OnFailureListener() {
@@ -149,6 +162,27 @@ public class signn_in extends Activity{
         }
         return "";
     }
-
+    public void orientLand(View view){
+        zoom++;
+        Button button2=findViewById(R.id.button2);
+        if(zoom%2==1) {
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+            if(engorhin%2==0) {
+                button2.setText("Zoom out");
+            }
+            else{
+                button2.setText("ज़ूम आउट");
+            }
+        }
+        else{
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+            if(engorhin%2==0) {
+                button2.setText("Zoom in");
+            }
+            else{
+                button2.setText("ज़ूम इन");
+            }
+        }
+    }
 
 }

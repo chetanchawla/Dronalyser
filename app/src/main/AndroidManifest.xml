@@ -22,8 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".signn_in" android:screenOrientation="portrait"/>
+        <activity android:name=".signn_in" android:configChanges="orientation|screenSize"/>
         <activity android:name=".call_drone" android:screenOrientation="portrait"/>
+        <activity android:name=".liveView" android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

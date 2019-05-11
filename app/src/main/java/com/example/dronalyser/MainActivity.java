@@ -130,4 +130,7 @@ public class MainActivity extends AppCompatActivity {
         engOrHin=toggleHin;
         return engOrHin;
     }
+    public void showLive(View view){
+        startActivity(new Intent(getApplicationContext(), liveView.class));
+    }
 }
