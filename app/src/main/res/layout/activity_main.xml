@@ -93,26 +93,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.752" />
-    <Button
-        android:id="@+id/drone_button_hin"
-        android:visibility="invisible"
-        style="@style/Widget.AppCompat.Button.Small"
-        android:layout_width="wrap_content"
-        android:layout_height="65dp"
-        android:background="@drawable/common_google_signin_btn_text_dark_normal_background"
-        android:fontFamily="@font/prod_sans_reg"
-        android:onClick="droneCall"
-        android:padding="20dp"
-        android:scrollHorizontally="true"
-        android:text="ड्रोन बुलायें"
-        android:textAllCaps="false"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.752" />
+
 
     <TextView
         android:id="@+id/drone_eng"
@@ -160,24 +141,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.57" />
-    <Button
-        android:id="@+id/signing_in_hindi"
-        style="@style/Widget.AppCompat.Button.Small"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/common_google_signin_btn_text_dark_normal_background"
-        android:fontFamily="@font/prod_sans_reg"
-        android:onClick="buttonSign"
-        android:padding="20dp"
-        android:scrollHorizontally="true"
-        android:text="सऐन इन"
-        android:textAllCaps="false"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.57" />
+
 
     <TextView
         android:id="@+id/live_eng"
@@ -224,24 +188,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.956" />
-    <Button
-        android:id="@+id/live_button_hin"
-        android:visibility="invisible"
-        style="@style/Widget.AppCompat.Button.Small"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/common_google_signin_btn_text_dark_normal_background"
-        android:fontFamily="@font/prod_sans_reg"
-        android:padding="20dp"
-        android:scrollHorizontally="true"
-        android:text="जाँच देखें"
-        android:textAllCaps="false"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.956" />
+
 
     <Switch
         android:id="@+id/Translate"
@@ -260,23 +207,6 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
-    <Switch
-        android:id="@+id/Translate_Hin"
-        android:visibility="invisible"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/common_google_signin_btn_text_dark_focused"
-        android:fontFamily="@font/hindi2"
-        android:onClick="convertText"
-        android:padding="10dp"
-        android:text="English"
-        android:textColor="#FFFFFF"
-        android:textSize="25dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.947"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+
 
 </android.support.constraint.ConstraintLayout>

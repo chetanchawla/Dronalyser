@@ -24,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
     }
 
+    //Function toggles the language of the application from Hindi toEnglish and Vice Versa
     public void convertText(View view){
         TextView heading_eng = (TextView)findViewById(R.id.heading_eng);
         TextView heading_hin = (TextView)findViewById(R.id.heading_hin);
@@ -44,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
         Button signing_in_hin = (Button)findViewById(R.id.signing_in_hindi);
         Switch translate = (Switch) findViewById(R.id.Translate);
         Switch translate_hin = (Switch) findViewById(R.id.Translate_Hin);
+
+
+        //Toggling the Englist to Hindi witch and vice versa
+
         if(toggleHin%2==0){
             heading_eng.setVisibility(View.INVISIBLE);
             heading_hin.setVisibility(View.VISIBLE);
@@ -53,14 +57,10 @@ public class MainActivity extends AppCompatActivity {
             drone_hin.setVisibility(View.VISIBLE);
             live_eng.setVisibility(View.INVISIBLE);
             live_hin.setVisibility(View.VISIBLE);
-            drone_button_eng.setVisibility(View.INVISIBLE);
-            drone_button_hin.setVisibility(View.VISIBLE);
-            live_button_eng.setVisibility(View.INVISIBLE);
-            live_button_hin.setVisibility(View.VISIBLE);
-            signing_in.setVisibility(View.INVISIBLE);
-            signing_in_hin.setVisibility(View.VISIBLE);
-            translate.setVisibility(View.INVISIBLE);
-            translate_hin.setVisibility(View.VISIBLE);
+            drone_button_eng.setText("ड्रोन बुलायें");
+            live_button_eng.setText("जाँच देखें");
+            signing_in.setText("सऐन इन");
+            translate.setText("English");
         }
         else{
             heading_eng.setVisibility(View.VISIBLE);
@@ -71,20 +71,19 @@ public class MainActivity extends AppCompatActivity {
             drone_hin.setVisibility(View.INVISIBLE);
             live_eng.setVisibility(View.VISIBLE);
             live_hin.setVisibility(View.INVISIBLE);
-            drone_button_eng.setVisibility(View.VISIBLE);
-            drone_button_hin.setVisibility(View.INVISIBLE);
-            live_button_eng.setVisibility(View.VISIBLE);
-            live_button_hin.setVisibility(View.INVISIBLE);
-            signing_in.setVisibility(View.VISIBLE);
-            signing_in_hin.setVisibility(View.INVISIBLE);
-            translate.setVisibility(View.VISIBLE);
-            translate_hin.setVisibility(View.INVISIBLE);
+            drone_button_eng.setText("Call Drone");
+            live_button_eng.setText("Live");
+            signing_in.setText("Sign In");
+            translate.setText("हिन्दी");
         }
         toggleHin++;
     }
     public void buttonSign(View view){
         //Fetch MAC Address of the device to sign in
         macid= getMac();
+        Toast.makeText(getBaseContext(),
+            macid,
+            Toast.LENGTH_SHORT).show();
         //Firebase connectivity to retrieve storage data
     }
 
